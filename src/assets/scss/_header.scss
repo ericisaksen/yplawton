@@ -1,0 +1,130 @@
+.headerContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: all .5s;
+  .scrolled &{
+    background: $primary;
+  }
+}
+.topBar{
+  position: relative;
+  width: 100%;
+  color: #fff;
+  padding: .5em 0;
+  ul {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    > li {
+      list-style: none;
+      display: inline-block;
+      margin: 0 10px;
+      font-size: .9rem;
+      > a {
+        display: block;
+        padding: .5em 1em;
+        text-decoration: none;
+        color: #fff;
+        span{
+          display: none;
+        }
+      }
+    }
+  }
+}
+.siteHeader{
+  background: none;
+  @include flexbox;
+  color: #fff;
+  .headerLeft{
+    width: 25%;
+    padding: 1em;
+    p{
+      margin: 0;
+    }
+    img{
+      max-width: 175px;
+    }
+  }
+  .headerRight{
+    width: 75%;
+    padding: .5em;
+    .menu-toggle-container{
+      .menu-toggle{
+        width: 28px;
+        height: 20px;
+        position: relative;
+        display: none;
+        span{
+          background: #fff;
+          height: 4px;
+          width: 100%;
+          display: block;
+          position: absolute;
+          &:first-child{
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+          }
+          &:nth-child(2){
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+          }
+          &:last-child{
+            top: 100%;
+            left: 0;
+            transform: translate(0, -100%);
+          }
+        }
+      }
+    }
+    nav{
+      > ul {
+        @include flexbox;
+        @include align-items(center);
+        margin: 0;
+        padding: 0;
+        float: right;
+        border-bottom: 1px dotted rgba(white, .5);
+        padding-left: 3em;
+        > li {
+          list-style: none;
+          text-align: center;
+          > a {
+            display: block;
+            font-size: .85rem;
+            text-decoration: none;
+            padding: 1em;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 700;
+            position: relative;
+            &::after{
+              position: absolute;
+              bottom:  0;
+              left: 50%;
+              transform: translate(-50%, 2px);
+              content: "";
+              display: block;
+              width: 0%;
+              height: 3px;
+              background: $secondary;
+              margin: 0 auto;
+            }
+            &.active,
+            &:hover{
+              &::after{
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

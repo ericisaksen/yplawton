@@ -1,0 +1,73 @@
+.title-container{
+  padding-top: 15%;
+  background: #333;
+  text-align: center;
+  color: #fff;
+}
+.text-center{
+  text-align: center;
+}
+.wrap{
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  &:not(.home-wrap){
+    min-height: 800px;
+  }
+  .cellGrid{
+    input[type="text"]{
+      width: 100%;
+      height: 40px;
+      padding: .5em 1em;
+      border: 1px solid #ddd;
+    }
+    textarea{
+      width: 100%;
+      height: 200px;
+      border: 1px solid #ddd;
+      padding: .5em 1em;
+    }
+    ion-icon{
+      font-size: 5rem;
+      color: #fff;
+    }
+  }
+}
+.eventContainer{
+  > .cell{
+    padding: 2em;
+    color: #fff;
+    background: $primary;
+    margin: 10px;
+    &.one-third{
+      width: calc(33.333% - 20px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h2{
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+.leadershipTeam{
+  > .cell{
+    padding: 1em;
+    border: 1px solid #ddd;
+    margin: 10px;
+    &.one-fourth{
+      width: calc(33.333% - 20px);
+    }
+    img{
+      margin-bottom: .5em;
+    }
+  }
+  h2{
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+  h3{
+    color: $secondary;
+    font-size: .85rem;
+  }
+}
